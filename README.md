@@ -131,7 +131,7 @@ Tests unitarios sin emulador:
 ## Capturas de pantalla 
 
 ##  Interfaz principal
-![Pantalla Pricipal](screenshots/PantallaP.png)
+![Pantalla Pricipal](screenshots/pantallaP.png)
 
 ![Pantalla Pricipal](screenshots/PantallaP1.png)
 
@@ -141,6 +141,7 @@ Tests unitarios sin emulador:
 ![progreso](screenshots/progreso3.png)
 ##  Pantalla de victoria
 ![Victoria con record ya establecido](screenshots/Victoria.png)
+##  Pantalla con nuevo record de victoria
 ![Victoria con nuevo record](screenshots/victoriaNuevoRecord.png)
 
 
