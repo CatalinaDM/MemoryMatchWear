@@ -27,7 +27,7 @@
             android:value="true" />
 
         <activity
-            android:name=".presentation.GameActivity"
+            android:name=".GameActivity"
             android:exported="true"
             android:taskAffinity=""
             android:theme="@style/GameActivityTheme.Starting">

@@ -3,7 +3,7 @@
  * most up to date changes to the libraries and their usages.
  */
 
-package mx.utng.ccdm.memorymatch.presentation
+package mx.utng.ccdm.memorymatch
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -27,7 +27,6 @@ import androidx.wear.compose.material3.lazy.rememberTransformationSpec
 import androidx.wear.compose.material3.lazy.transformedHeight
 import androidx.wear.compose.ui.tooling.preview.WearPreviewDevices
 import androidx.wear.compose.ui.tooling.preview.WearPreviewFontScales
-import mx.utng.ccdm.memorymatch.R
 import mx.utng.ccdm.memorymatch.presentation.theme.MemoryMatchWearTheme
 
 class GameActivity : ComponentActivity() {
