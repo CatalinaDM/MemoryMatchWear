@@ -6,4 +6,3 @@ data class Card(
     val isFlipped: Boolean  = false,  // boca arriba?
     val isMatched: Boolean  = false,  // ya se encontró el par?
 )
-

@@ -33,15 +33,4 @@ class MemoryViewModelFactory(private val context: Context) : ViewModelProvider.F
     }
 }
 
-class GameActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            val vm: MemoryViewModel = viewModel(
-                factory = MemoryViewModelFactory(applicationContext)
-            )
-            MaterialTheme { BoardScreen(viewModel = vm) }
-        }
-    }
-}
 

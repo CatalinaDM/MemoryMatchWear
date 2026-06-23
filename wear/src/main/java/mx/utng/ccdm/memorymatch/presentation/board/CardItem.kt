@@ -40,7 +40,7 @@ fun CardItem(
 
     Box(
         modifier = modifier
-            .size(52.dp)
+            .size(39.dp)
             .graphicsLayer {
                 // Rotar en el eje Y (efecto 3D flip)
                 rotationY    = rotation

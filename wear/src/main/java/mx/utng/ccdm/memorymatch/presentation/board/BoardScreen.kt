@@ -1,9 +1,11 @@
 package mx.utng.ccdm.memorymatch.presentation.board
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.itemsIndexed
@@ -25,6 +27,8 @@ import androidx.wear.compose.material3.timeTextSeparator
 import kotlinx.coroutines.delay
 import mx.utng.ccdm.memorymatch.domain.model.GamePhase
 import mx.utng.ccdm.memorymatch.domain.model.GameState
+import androidx.compose.ui.Alignment
+import androidx.wear.compose.material3.CircularProgressIndicator
 
 
 @Composable
@@ -58,14 +62,14 @@ fun BoardScreen(viewModel: MemoryViewModel = viewModel()) {
         // HUD superior: tiempo
         TimeText(modifier = Modifier.scrollAway(rememberScalingLazyListState())) {
             timeTextSeparator()
-            curvedText("${state.elapsedSeconds}s · ${state.moves} mov")
+            curvedText("${state.elapsedSeconds}s · ${state.moves} mov · ${state.matchesFound}/ ${GameState.TOTAL_PAIRS}")
         }
 
         // Cuadrícula 3×4 centrada en la pantalla circular
         LazyVerticalGrid(
             columns = GridCells.Fixed(3),
             modifier = Modifier
-                .padding(top = 28.dp, start = 8.dp, end = 8.dp, bottom = 24.dp),
+                .padding(top = 32.dp, start = 4.dp, end = 4.dp, bottom = 20.dp),
             horizontalArrangement = Arrangement.spacedBy(6.dp),
             verticalArrangement   = Arrangement.spacedBy(6.dp),
         ) {
@@ -77,10 +81,12 @@ fun BoardScreen(viewModel: MemoryViewModel = viewModel()) {
             }
         }
 
-        // Indicador de progreso (pares encontrados)
-        PositionIndicator(
-            stepCount  = GameState.TOTAL_PAIRS,
-            currentStep = state.matchesFound
+        // Progreso
+        CircularProgressIndicator(
+            progress = {state.matchesFound.toFloat() / GameState.TOTAL_PAIRS},
+            modifier = Modifier
+                .align(Alignment.BottomCenter),
+            strokeWidth = 3.dp
         )
     }
 }
